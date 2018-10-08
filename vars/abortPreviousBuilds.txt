@@ -1,0 +1,3 @@
+# Jenkins Pipeline's Shared Library
+
+## Abort Previous Builds
