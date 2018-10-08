@@ -1,3 +1,37 @@
 # Jenkins Pipeline's Shared Library
 
 ## Abort Previous Builds
+
+### Getting Started
+
+* Your build will fail initially.
+
+```text
+Scripts not permitted to use method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild. Administrators can decide whether to approve or reject this signature.
+Scripts not permitted to use method hudson.model.Run getPreviousBuildInProgress. Administrators can decide whether to approve or reject this signature.
+```
+
+* Open http://JENKINS_HOST_URL/scriptApproval/ page.
+
+* [Approve] /  [Approve assuming permission check] /  [Deny]
+
+```text
+signature : method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild Approving this signature may introduce a security vulnerability! You are advised to deny it.
+signature : method hudson.model.Run getPreviousBuildInProgress
+```
+
+* Approve it.
+
+
+Signature already approved:
+
+```text
+method hudson.model.Run getPreviousBuildInProgress
+method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild
+```
+
+Signatures already approved which may have introduced a security vulnerability (recommend clearing):
+
+```text
+method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild
+```
